@@ -14,7 +14,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #b84635;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -35,4 +35,608 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+
+
+
+
+
+
+/*Logo l page*/
+
+
+.petitlogo {height: 200px; width: 280px;   }
+
+
+
+/*Navbar*/
+
+
+.barre {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; 
+  margin-top: 20px;
+  padding: 0 30px;
+  margin-left:0px;
+  
+}
+
+
+.Navbarr {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: linear-gradient(to right, #212E53, #4A919E); /* Dégradé harmonieux */
+  color: white;
+  padding : 0;
+  border-radius: 20px;
+  width: 800px;
+  margin-right: 320px;
+}
+
+.Navbarr td a,
+
+.Navbarr td button {
+  color: white; 
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.Navbarr td:hover {
+  background-color:#212E53 ;border-radius: 20px; 
+}
+
+.Navbarr td {
+  padding: 10px 20px;
+  text-align: center;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.Navbarr td:nth-of-type(5){background-color:#212E53;  border-radius: 20px; color: white; background-size:contain;}
+
+
+/*Tunisian Startup*/
+/*4d53bf*/
+
+#text {
+  background: linear-gradient(330deg, rgb(251, 251, 251), #4A919E); /* Dégradé souhaité */
+  -webkit-background-clip: text; /* Appliquer le dégradé au texte */
+  -webkit-text-fill-color: transparent; /* Rendre le texte transparent */
+  display: inline-block; /* Nécessaire pour que le clipping fonctionne */
+  font-size: 5rem; /* Ajustez la taille selon vos besoins */
+  font-weight: bold; /* Optionnel pour un texte en gras */
+  background-color: transparent; /* Assurez-vous que le fond est transparent */
+  margin-top: 50px; margin-left: 460px ; font-size:120px; text-align: center;line-height: 150px;
+  font-family: 'Courier New', Courier, 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; margin-top: 100px;margin-bottom: 300px;
+}
+
+
+
+
+
+
+
+
+
+/*Footer*/
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 30px;
+  gap: 80px;
+  background: linear-gradient(to top, #4A919E, #212E53); /* Dégradé harmonieux */ /* Semi-transparent for better blur visibility */
+  box-shadow: 0 -4px 8px  #4A919E;
+  border-radius: 20px;
+
+}
+
+
+
+.nav, .info {
+  color: #f0f0f0;
+  border-collapse: collapse;
+}
+
+.info caption, .nav caption {
+  color:#212E53;
+  font-size: 1.6rem;
+  font-family: 'Georgia', serif;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: bold;
+  text-align: left;
+}
+
+.info td, .nav td {
+  padding: 8px 10px;
+  font-size: 1rem;
+  color: white;
+}
+
+.info td:hover, .nav td:hover {
+  color: #CE6A6B;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.imgg {width: 500px ; height: 150px;padding-top: 50px;}
+
+
+
+
+
+
+
+
+
+/*LOGIN*/
+
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
+
+
+
+form {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+section {
+  width: 90%;
+  max-width: 420px;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  align-items: center; 
+  padding: 2rem; 
+  background: linear-gradient(to right, #BED3C3, #212E53); /* Dégradé harmonieux */ /* Semi-transparent for better blur visibility */
+  backdrop-filter: blur(10px); 
+  border-radius: 15px; 
+  box-shadow: 0 4px 20px #4A919E; margin-left: 560px; margin-top: 100px;
+}
+
+/* Form Styles */
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center items vertically */
+    align-items: center; /* Center items horizontally */
+    width: 100%; /* Make form take full width */ 
+}
+
+input[type="text"],
+input[type="password"],
+button,
+input[type="email"],
+textarea {
+    font-family: 'Nunito', sans-serif;
+    font-size: 18px; 
+    padding: 0.75rem; /* Increased padding for better touch targets */
+    border-radius: 5px; /* Rounded corners */
+    width: calc(100% - 1rem); /* Adjust width for padding */
+    margin: 0.5rem 0; /* Add margin between inputs */
+    border: 1px solid #ddd; /* Light border */
+    transition: border-color 0.3s, box-shadow 0.3s; /* Smooth transition for focus */
+    background-color: rgba(255, 255, 255, 0.8); /* Slightly opaque background for inputs */
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+    border-color: dodgerblue; /* Change border color on focus */
+    box-shadow: 0 0 5px rgba(0, 153, 255, 0.5); /* Focus effect */
+}
+
+label,
+button {
+    margin-top: 1rem;
+    width: 100%; /* Make buttons take full width */
+}
+
+button {
+    background-color: var(--button-bg);
+    color: var(--primary-color);
+    padding: 0.75rem; /* Increase button padding */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transitions */
+}
+
+button:hover {
+    background-color: var(--button-hover-bg); /* Change background on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+.instructions {
+  font-size: 0.75rem;
+  border-radius: 0.5rem;
+  background: var(--instruction-bg);
+  color: var(--instruction-color);
+  padding: 0.5rem; /* Increased padding for better readability */
+  position: relative;
+  bottom: -10px;
+  width: 100%; /* Full width for instructions */
+}
+
+.offscreen {
+    position: absolute;
+    left: -9999px;
+}
+
+.hide {
+    display: none;
+}
+
+/* Validation Messages */
+.valid {
+    color: var(--valid-color);
+    margin-left: 0.25rem;
+}
+
+.invalid {
+    color: red;
+    margin-left: 0.25rem;
+}
+
+#uidnote,#emailnote,#pwdnote,#confirmnote {
+    background-color: #CE6A6B;
+    color: var(--error-color);
+    font-weight: bold;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+    border-radius: 5px; /* Rounded corners for error messages */
+}
+
+.line {
+    display: inline-block;
+}
+
+
+/* Page CV Submission */
+.cv-submission {
+  background: linear-gradient(to right, #BED3C3, #212E53); /* Dégradé harmonieux */ /* Semi-transparent for better blur visibility */
+  padding: 40px;
+  margin: 30px auto;
+  border-radius: 15px;
+  box-shadow: 0 6px 15px #BED3C3;
+  max-width: 400px;
+  max-height: 620px ;
+  animation: fadeInUp 1s ease-out;
+}
+
+
+.cv-submission h2 {
+  font-size: 2em;
+  margin-bottom: 30px;
+  text-align: center;
+  color: #000; /* Couleur noire par défaut */
+  animation: slideInFromTop 0.7s ease-out;
+}
+
+
+
+.cv-submission form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.cv-submission label {
+  font-size: 1.2em;
+  
+}
+
+.cv-submission input[type="text"],
+.cv-submission input[type="email"],
+.cv-submission input[type="file"] {
+  padding: 12px;
+  border: 1px solid #ccdeee;
+  border-radius: 10px;
+  font-size: 1em;
+  transition: all 0.3s ease;
+}
+
+.cv-submission input[type="text"]:focus,
+.cv-submission input[type="email"]:focus,
+.cv-submission input[type="file"]:focus {
+  border-color: #EBACA2;
+  transform: scale(1.02);
+}
+
+.cv-submission button {
+  background: linear-gradient(45deg, #EBACA2, #FAF2EA);
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 30px;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.cv-submission button:hover {
+  background: linear-gradient(45deg, #EBACA2, #FAF2EA);
+  transform: scale(1.05);
+}
+
+.cv-submission .back-btn {
+  background: linear-gradient(45deg, #EBACA2, #FAF2EA);
+  color: #007bff;
+  border: none;
+  border-radius: 30px;
+  padding: 10px 18px;
+  cursor: pointer;
+  font-size: 1em;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.cv-submission .back-btn:hover {
+  background: linear-gradient(45deg, #EBACA2, #FAF2EA);
+}
+
+@keyframes fadeInUp {
+  from {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+@keyframes slideInFromTop {
+  from {
+      transform: translateY(-30px);
+      opacity: 0;
+  }
+  to {
+      transform: translateY(0);
+      opacity: 1;
+  }
+}
+
+
+/* Page JobList */
+.job-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 40px;
+  margin-top: 20px;
+  animation: fadeIn 1s ease-out;
+}
+
+.job-card {
+  background: linear-gradient(45deg, #EBACA2, #FAF2EA);
+  border: 1px solid #ddd;
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  padding: 25px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.job-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.job-card h2 {
+  font-size: 1.6em;
+  color: #333;
+  margin-bottom: 15px;
+  animation: slideIn 0.5s ease-out;
+}
+
+.job-card p {
+  font-size: 1em;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.job-card button {
+  background: linear-gradient(45deg, #EBACA2, #FAF2EA);
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 30px;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.job-card button:hover {
+  background: linear-gradient(45deg, #feb47b, #ff7e5f);
+  transform: scale(1.05);
+}
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+      transform: translateY(20px);
+      opacity: 0;
+  }
+  to {
+      transform: translateY(0);
+      opacity: 1;
+  }
+}
+
+
+
+
+
+
+
+
+.text-gradient h1 {
+  background: linear-gradient(90deg, rgba(255, 0, 150, 1) 0%, rgba(0, 204, 255, 1) 100%);
+  -webkit-background-clip: text;
+  color: transparent;
+  font-size: 3rem;
+  text-align: center;
+  font-weight: bold;
+}
+
+
+
+
+/* Login */
+
+/* Style du cadre du bouton */
+.button-main-page {
+  background-color: #ffffff;  /* Fond blanc pour le bouton */
+  color: #4CAF50;             /* Couleur du texte */
+  padding: 12px 25px;         /* Espacement autour du texte */
+  border: 2px solid #4CAF50;  /* Bordure solide verte */
+  border-radius: 30px;        /* Coins très arrondis */
+  cursor: pointer;           /* Curseur pointeur au survol */
+  font-size: 18px;            /* Taille de police */
+  font-weight: bold;          /* Police en gras */
+  text-transform: uppercase;  /* Texte en majuscules */
+  transition: all 0.4s ease;  /* Transition fluide pour toutes les propriétés */
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);  /* Ombre légère pour le bouton */
+}
+
+/* Effet de survol - Changement de couleur et ajout de l'ombre */
+.button-main-page:hover {
+  background-color: #4CAF50;  /* Fond vert au survol */
+  color: white;               /* Couleur du texte devient blanche */
+  transform: scale(1.05);      /* Légère augmentation de la taille */
+  box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.2);  /* Ombre plus forte au survol */
+}
+
+/* Effet dynamique lorsqu'il est actif (au clic) */
+.button-main-page:active {
+  background-color: #388E3C;  /* Couleur plus sombre lors du clic */
+  transform: scale(0.98);      /* Réduction lors du clic */
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);  /* Ombre réduite lors du clic */
+}
+
+/* Ajout d'un fond dégradé dans le cadre */
+.button-main-page:hover {
+  background-image: linear-gradient(to right, #4CAF50, #45a049);  /* Dégradé de vert au survol */
+}
+
+/* Ajout de décoration au bouton pour l'effet hover */
+.button-main-page {
+  border: 2px solid #4CAF50;
+  padding: 12px 25px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+  background-color: #ffffff;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.button-main-page:hover {
+  transform: translateY(-5px);  /* Légère élévation au survol */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);  /* Ombre plus grande */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Style pour le menu horizontal */
+table {
+  width: 100%;
+}
+
+.horizontal-item {
+  padding: 10px;
+  text-align: center;
+}
+
+.menu-icon {
+  cursor: pointer;
+  padding: 10px;
+  font-size: 20px;
+}
+
+
+
+/* Conteneur de l'icône ☰ et du menu déroulant */
+.menu-container {
+  position: relative; /* Positionnement relatif pour que le menu soit positionné par rapport à cet élément */
+  display: inline-block; /* Assure que l'icône et le menu sont dans un flux cohérent */
+}
+
+/* Icône ☰ */
+.menu-icon {
+  cursor: pointer; /* Change le curseur sur l'icône */
+}
+
+/* Menu déroulant */
+.vertical-menu {
+  position: absolute; /* Positionne le menu par rapport à son conteneur parent */
+  top: 100%; /* Place le menu directement sous l'icône */
+  left: 0; /* Aligne le menu à gauche de l'icône */
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 1000;
+  opacity: 0; /* Menu caché par défaut */
+  visibility: hidden; /* Menu caché par défaut */
+  transition: opacity 0.3s ease, visibility 0s 0.3s; /* Transition pour rendre le menu visible */
+}
+
+/* Lorsque le menu est visible */
+.vertical-menu.show {
+  opacity: 1; /* Menu visible */
+  visibility: visible; /* Rendre visible */
+  transition: opacity 0.3s ease; /* Transition fluide pour le menu */
+}
+
+/* Style des éléments du menu */
+.vertical-item {
+  padding: 8px 12px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.vertical-item a, .vertical-item button {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  display: block;
+}
+
+.vertical-item a:hover, .vertical-item button:hover {
+  background-color: #f0f0f0;
+  color: #007bff;
 }
