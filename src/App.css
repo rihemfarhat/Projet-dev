@@ -423,6 +423,7 @@ button:hover {
   animation: fadeIn 1s ease-out;
 }
 
+
 .job-card {
   background: linear-gradient(45deg, #EBACA2, #FAF2EA);
   border: 1px solid #ddd;
@@ -466,8 +467,8 @@ button:hover {
 
 .job-card button:hover {
   background: linear-gradient(45deg, #feb47b, #ff7e5f);
-  transform: scale(1.05);
-}
+  transform: scale(1.05);}
+  
 @keyframes fadeIn {
   from {
       opacity: 0;
