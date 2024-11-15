@@ -413,99 +413,101 @@ button:hover {
 
 
 /* Page JobList */
+
+
+
+/* jobs.css */
+
 .job-list {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 colonnes fixes */
   gap: 20px;
-  justify-content: center;
-  padding: 40px;
   margin-top: 20px;
-  animation: fadeIn 1s ease-out;
+  margin-left: 100px;
+  margin-right: 100px;
 }
 
 
+.job-list button {
+  background-color: #212E53; /* Couleur de fond du bouton */
+  color: white; /* Couleur du texte */
+  border: 1px solid #ddd; /* Bordure autour du bouton */
+  padding: 8px 20px; /* Espace autour du texte (ajusté) */
+  font-size: 1rem; /* Taille du texte */
+  border-radius: 5px; /* Coins arrondis */
+  cursor: pointer; /* Curseur pointeur */
+  display: inline-block; /* Empêche l'étalement du fond */
+  white-space: nowrap; /* Empêche le texte de se casser sur plusieurs lignes */
+  text-align: center; /* Centre le texte à l'intérieur */
+  transition: background-color 0.3s ease; /* Transition pour l'effet au survol */
+}
+
+.job-list button:hover {
+  background-color: #0056b3; /* Couleur de fond lors du survol */
+}
+
 .job-card {
-  background: linear-gradient(45deg, #EBACA2, #FAF2EA);
-  border: 1px solid #ddd;
-  border-radius: 15px;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-  width: 300px;
-  padding: 25px;
-  text-align: center;
+  margin-top: 100px;
+  background: linear-gradient(145deg, #212E53, #4A919E);
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .job-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  transform: translateY(-7px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
 }
 
 .job-card h2 {
-  font-size: 1.6em;
-  color: #333;
-  margin-bottom: 15px;
-  animation: slideIn 0.5s ease-out;
+  font-size: 1.6rem;
+  margin: 0;
+  color: #F1F1F1;
+  font-weight: 600;
+  font-family: 'Playfair Display', serif;
 }
 
-.job-card p {
-  font-size: 1em;
-  color: #666;
-  margin-bottom: 20px;
+.job-card .company {
+  font-size: 1.2rem;
+  color: #FFD700;
+  margin-top: 8px;
+  font-family: 'Roboto', sans-serif;
 }
 
-.job-card button {
-  background: linear-gradient(45deg, #EBACA2, #FAF2EA);
+.job-card .location {
+  font-size: 1rem;
+  color: #F5F5F5;
+  margin-top: 10px;
+}
+
+.job-card .description {
+  font-size: 1rem;
+  margin-top: 10px;
+  color: #F5F5F5;
+  font-family: 'Roboto', sans-serif;
+}
+
+.apply-button {
+  background: linear-gradient(145deg, #FFA500, #FF8C00);
   color: white;
-  padding: 12px 20px;
+  padding: 12px 24px;
+  font-size: 1.1rem;
   border: none;
-  border-radius: 30px;
-  font-size: 1.1em;
+  border-radius: 5px;
   cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-}
-
-.job-card button:hover {
-  background: linear-gradient(45deg, #feb47b, #ff7e5f);
-  transform: scale(1.05);}
-  
-@keyframes fadeIn {
-  from {
-      opacity: 0;
-  }
-  to {
-      opacity: 1;
-  }
-}
-
-@keyframes slideIn {
-  from {
-      transform: translateY(20px);
-      opacity: 0;
-  }
-  to {
-      transform: translateY(0);
-      opacity: 1;
-  }
-}
-
-
-
-
-
-
-
-
-.text-gradient h1 {
-  background: linear-gradient(90deg, rgba(255, 0, 150, 1) 0%, rgba(0, 204, 255, 1) 100%);
-  -webkit-background-clip: text;
-  color: transparent;
-  font-size: 3rem;
-  text-align: center;
+  margin-top: 15px;
+  transition: background 0.3s ease, transform 0.3s ease;
+  font-family: 'Poppins', sans-serif;
   font-weight: bold;
 }
 
-
+.apply-button:hover {
+  background: linear-gradient(145deg, #FF7F00, #FF6F00);
+  transform: scale(1.05);
+}
 
 
 /* Login */
