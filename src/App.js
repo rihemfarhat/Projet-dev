@@ -8,6 +8,7 @@ import Register from "./Register";
 import Login from "./Login";
 import Jobs from "./Jobs";
 import AboutUs from "./AboutUs";
+import EventPage from "./EventPage";
 import logo from './Capture_d_écran_2024-11-09_210108-removebg-preview.png';
 
 function App() {
@@ -15,18 +16,29 @@ function App() {
     const [showLogin, setShowLogin] = useState(false);
     const [showCareers, setShowCareers] = useState(false);
     const [showAboutUs, setShowAboutUs] = useState(false);
+    const [showEventPage, setShowEventPage] = useState(false);
 
     const handleShowHome = () => {
         setShowRegister(false);
         setShowLogin(false);
         setShowCareers(false);
         setShowAboutUs(false);
+        setShowEventPage(false);
+    };
+
+    const handleShowEventPage = () => {
+        setShowRegister(false);
+        setShowLogin(false);
+        setShowCareers(false);
+        setShowAboutUs(false);
+        setShowEventPage(true);
     };
 
     const handleShowAboutUs = () => {
         setShowAboutUs(true);
         setShowRegister(false);
         setShowLogin(false);
+        setShowEventPage(false);
         setShowCareers(false);
     };
 
@@ -35,6 +47,7 @@ function App() {
         setShowLogin(false);
         setShowCareers(false);
         setShowAboutUs(false);
+        setShowEventPage(false);
     };
 
     const handleShowLogin = () => {
@@ -42,6 +55,7 @@ function App() {
         setShowRegister(false);
         setShowCareers(false);
         setShowAboutUs(false);
+        setShowEventPage(false);
     };
 
     const handleShowCareers = () => {
@@ -49,13 +63,15 @@ function App() {
         setShowRegister(false);
         setShowLogin(false);
         setShowAboutUs(false);
+        setShowEventPage(false);
     };
 
     return (
         <>
             <NetworkBackground />
             
-            {!showRegister && !showLogin && !showCareers && !showAboutUs && (
+            {/* Afficher la barre de navigation si aucune page n'est sélectionnée */}
+            {!showRegister && !showLogin && !showCareers && !showAboutUs && !showEventPage && (
                 <div className="barre">
                     <img className="petitlogo" src={logo} alt="Logo" />
                     <Navbarr
@@ -63,44 +79,76 @@ function App() {
                         setShowRegister={handleShowRegister}
                         setShowCareers={handleShowCareers}
                         setShowAboutUs={handleShowAboutUs}
-                        
+                        setShowEventPage={handleShowEventPage}
                     />
                 </div>
             )}
 
-            {showRegister ? (
+            {/* Page Register */}
+            {showRegister && (
                 <div>
                     <img className="petitlogo" src={logo} alt="Logo" />
                     <Register className="register" onSignInClick={handleShowLogin} />
                 </div>
-            ) : showLogin ? (
+            )}
+
+            {/* Page Login */}
+            {showLogin && (
                 <div>
                     <img className="petitlogo" src={logo} alt="Logo" />
                     <Login />
                 </div>
-            ) : showCareers ? (
+            )}
+
+            {/* Page Careers */}
+            {showCareers && (
                 <div className="CareersNavbar">
                     <img className="petitlogo" src={logo} alt="Logo" />
-                      <Navbarr
+                    <Navbarr
+                        className="Navbarr"
+                        setShowRegister={handleShowRegister}
+                        setShowCareers={handleShowCareers}
+                        setShowAboutUs={handleShowAboutUs}
+                        resetHomePage={handleShowHome}
+                        setShowEventPage={handleShowEventPage}
+                    />
+                    <Jobs />
+                </div>
+            )}
+
+            {/* Page Event */}
+            {showEventPage && (
+                <div className="EventPageNavbar">
+                    <img className="petitlogo" src={logo} alt="Logo" />
+                    <Navbarr
                         className="Navbarr"
                         setShowRegister={handleShowRegister}
                         setShowCareers={handleShowCareers}
                         setShowAboutUs={handleShowAboutUs}
                         resetHomePage={handleShowHome}
                     />
-                <Jobs /></div>
-            ) : showAboutUs ? (<div className="AboutusNavbar">
-                <img className="petitlogo" src={logo} alt="Logo" />
-                <Navbarr
+                    <EventPage />
+                </div>
+            )}
+
+            {/* Page AboutUs */}
+            {showAboutUs && (
+                <div className="AboutusNavbar">
+                    <img className="petitlogo" src={logo} alt="Logo" />
+                    <Navbarr
                         className="Navbarr"
                         setShowRegister={handleShowRegister}
                         setShowCareers={handleShowCareers}
                         setShowAboutUs={handleShowAboutUs}
                         resetHomePage={handleShowHome}
                     />
-                <AboutUs /></div>
-            ) : (
-                <>  
+                    <AboutUs />
+                </div>
+            )}
+
+            {/* Page d'accueil (TextGradient et footer) */}
+            {!showRegister && !showLogin && !showCareers && !showAboutUs && !showEventPage && (
+                <>
                     <TextGradient />
                     <footer>
                         <ContactUs className3="imgg" className1="info" className2="nav" />
