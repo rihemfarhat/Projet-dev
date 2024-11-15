@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-function Navbarr({ className, setShowRegister, setShowCareers }) {
+function Navbarr({ className, setShowRegister, setShowCareers,setShowAboutUs }) {
     const list = ["Home", "About Us", "Events", "Careers", "Register"];
     const [showVerticalMenu, setShowVerticalMenu] = useState(false);
 
@@ -11,6 +11,9 @@ function Navbarr({ className, setShowRegister, setShowCareers }) {
         }
         if (item === "Careers") {
             return <button onClick={() => setShowCareers(true)}>{item}</button>;
+        }
+        if (item === "About Us") {
+            return <button onClick={() => setShowAboutUs(true)}>{item}</button>;
         }
         return <Link to={`/${item.replace(/\s+/g, '').toLowerCase()}`}>{item}</Link>;
     };
