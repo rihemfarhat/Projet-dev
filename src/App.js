@@ -16,6 +16,13 @@ function App() {
     const [showCareers, setShowCareers] = useState(false);
     const [showAboutUs, setShowAboutUs] = useState(false);
 
+    const handleShowHome = () => {
+        setShowRegister(false);
+        setShowLogin(false);
+        setShowCareers(false);
+        setShowAboutUs(false);
+    };
+
     const handleShowAboutUs = () => {
         setShowAboutUs(true);
         setShowRegister(false);
@@ -56,6 +63,7 @@ function App() {
                         setShowRegister={handleShowRegister}
                         setShowCareers={handleShowCareers}
                         setShowAboutUs={handleShowAboutUs}
+                        
                     />
                 </div>
             )}
@@ -72,19 +80,23 @@ function App() {
                 </div>
             ) : showCareers ? (
                 <div className="CareersNavbar">
-                <Navbarr
+                    <img className="petitlogo" src={logo} alt="Logo" />
+                      <Navbarr
                         className="Navbarr"
                         setShowRegister={handleShowRegister}
                         setShowCareers={handleShowCareers}
                         setShowAboutUs={handleShowAboutUs}
+                        resetHomePage={handleShowHome}
                     />
                 <Jobs /></div>
             ) : showAboutUs ? (<div className="AboutusNavbar">
+                <img className="petitlogo" src={logo} alt="Logo" />
                 <Navbarr
                         className="Navbarr"
                         setShowRegister={handleShowRegister}
                         setShowCareers={handleShowCareers}
                         setShowAboutUs={handleShowAboutUs}
+                        resetHomePage={handleShowHome}
                     />
                 <AboutUs /></div>
             ) : (

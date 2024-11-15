@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-function Navbarr({ className, setShowRegister, setShowCareers,setShowAboutUs }) {
+function Navbarr({ className, setShowRegister, setShowCareers, setShowAboutUs, resetHomePage }) {
     const list = ["Home", "About Us", "Events", "Careers", "Register"];
     const [showVerticalMenu, setShowVerticalMenu] = useState(false);
 
@@ -15,29 +15,32 @@ function Navbarr({ className, setShowRegister, setShowCareers,setShowAboutUs }) 
         if (item === "About Us") {
             return <button onClick={() => setShowAboutUs(true)}>{item}</button>;
         }
+        if (item === "Home") {
+            return <button onClick={resetHomePage}>{item}</button>; // Home button to reset
+        }
         return <Link to={`/${item.replace(/\s+/g, '').toLowerCase()}`}>{item}</Link>;
     };
 
     return (
         <div 
             className={className}
-            onMouseLeave={() => setShowVerticalMenu(false)} // Cache le menu lorsque la souris quitte
+            onMouseLeave={() => setShowVerticalMenu(false)} // Hide the menu when mouse leaves
         >
-            {/* Conteneur de l'icône et du menu déroulant */}
+            {/* Menu container */}
             <div className="menu-container">
-                {/* Icône ☰ */}
+                {/* Menu icon ☰ */}
                 <div 
                     className="menu-icon"
-                    onMouseEnter={() => setShowVerticalMenu(true)} // Affiche le menu lors du survol
+                    onMouseEnter={() => setShowVerticalMenu(true)} // Show menu on hover
                 >
                     ☰
                 </div>
                 
-                {/* Menu vertical */}
+                {/* Vertical menu */}
                 <div 
                     className={`vertical-menu ${showVerticalMenu ? 'show' : ''}`}
-                    onMouseEnter={() => setShowVerticalMenu(true)} // Garde le menu visible lors du survol du menu
-                    onMouseLeave={() => setShowVerticalMenu(false)} // Cache le menu lorsque la souris quitte
+                    onMouseEnter={() => setShowVerticalMenu(true)} // Keep menu visible on hover
+                    onMouseLeave={() => setShowVerticalMenu(false)} // Hide the menu when mouse leaves
                 >
                     {list.map((item) => (
                         <div key={`vertical-${item}`} className="vertical-item">
@@ -47,7 +50,7 @@ function Navbarr({ className, setShowRegister, setShowCareers,setShowAboutUs }) 
                 </div>
             </div>
             
-            {/* Éléments horizontaux de la barre de navigation */}
+            {/* Horizontal navigation items */}
             <table>
                 <tbody>
                     <tr>
