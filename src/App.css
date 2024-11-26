@@ -201,7 +201,7 @@ form {
   justify-content: center; 
   align-items: center; 
   padding: 2rem; 
-  background: linear-gradient(to right, #BED3C3, #212E53); /* Dégradé harmonieux */ /* Semi-transparent for better blur visibility */
+  background: linear-gradient(to right, #ffffff, #4e30d4); /* Dégradé harmonieux */ /* Semi-transparent for better blur visibility */
   backdrop-filter: blur(10px); 
   border-radius: 15px; 
   box-shadow: 0 4px 20px #4A919E; margin-left: 560px; margin-top: 100px;
@@ -647,7 +647,7 @@ table {
 
 
 
-/*about us page */
+
 
 .AboutusNavbar .Navbarr, .CareersNavbar .Navbarr,.EventPageNavbar .Navbarr {
   margin-left: auto; 
