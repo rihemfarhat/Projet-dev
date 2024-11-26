@@ -11,7 +11,7 @@ const Login = () => {
     };
 
     return (
-        <section>
+        <section class="log">
             <h1>Login</h1>
             <form>
                 <label htmlFor="username">Username:</label>

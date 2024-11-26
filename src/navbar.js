@@ -1,30 +1,27 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom"; // Importer Link pour la navigation
 
-function Navbarr({ className, setShowRegister, setShowCareers, setShowAboutUs, resetHomePage , setShowEventPage}) {
-    const list = ["Home", "About Us", "Events", "Careers", "Register"];
+function Navbarr({ className, setShowRegister, setShowCareers, setShowAdvice, setShowAboutUs, resetHomePage, setShowEventPage }) {
+    const list = ["Home", "About Us", "Events", "Careers", "Career Advice", "Register"];
     const [showVerticalMenu, setShowVerticalMenu] = useState(false);
 
     const renderMenuItem = (item) => {
-        if (item === "Register") {
-            return <button onClick={() => setShowRegister(true)}>{item}</button>;
+        switch (item) {
+            case "Home":
+                return <button onClick={resetHomePage}>{item}</button>; // Home button to reset
+            case "Register":
+                return <button onClick={() => setShowRegister()}>Register</button>;
+            case "Careers":
+                return <button onClick={() => setShowCareers()}>Careers</button>;
+            case "Career Advice":
+                return <button onClick={() => setShowAdvice()}>Career Advice</button>;
+            case "Events":
+                return <button onClick={() => setShowEventPage()}>Events</button>;
+            case "About Us":
+                return <button onClick={() => setShowAboutUs()}>About Us</button>;
+            default:
+                return <Link to={`/${item.replace(/\s+/g, '').toLowerCase()}`}>{item}</Link>;
         }
-        if (item === "Careers") {
-            return <button onClick={() => setShowCareers(true)}>{item}</button>;
-        }
-        if (item === "Events") {
-            return <button onClick={() => setShowEventPage(true)}>{item}</button>;
-        }
-        if (item === "About Us") {
-            return <button onClick={() => setShowAboutUs(true)}>{item}</button>;
-        }
-        if (item === "Home") {
-            return <button onClick={resetHomePage}>{item}</button>; // Home button to reset
-        }
-        if (item === "Events") {
-            return <button onClick={() => setShowEventPage(true)}>{item}</button>;
-        }
-        return <Link to={`/${item.replace(/\s+/g, '').toLowerCase()}`}>{item}</Link>;
     };
 
     return (

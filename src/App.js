@@ -9,152 +9,115 @@ import Login from "./Login";
 import Jobs from "./Jobs";
 import AboutUs from "./AboutUs";
 import EventPage from "./EventPage";
+import Advice from "./Advice";
 import logo from './Capture_d_écran_2024-11-09_210108-removebg-preview.png';
 
 function App() {
-    const [showRegister, setShowRegister] = useState(false);
-    const [showLogin, setShowLogin] = useState(false);
-    const [showCareers, setShowCareers] = useState(false);
-    const [showAboutUs, setShowAboutUs] = useState(false);
-    const [showEventPage, setShowEventPage] = useState(false);
+    const [currentPage, setCurrentPage] = useState("home");
 
-    const handleShowHome = () => {
-        setShowRegister(false);
-        setShowLogin(false);
-        setShowCareers(false);
-        setShowAboutUs(false);
-        setShowEventPage(false);
-    };
-
-    const handleShowEventPage = () => {
-        setShowRegister(false);
-        setShowLogin(false);
-        setShowCareers(false);
-        setShowAboutUs(false);
-        setShowEventPage(true);
-    };
-
-    const handleShowAboutUs = () => {
-        setShowAboutUs(true);
-        setShowRegister(false);
-        setShowLogin(false);
-        setShowEventPage(false);
-        setShowCareers(false);
-    };
-
-    const handleShowRegister = () => {
-        setShowRegister(true);
-        setShowLogin(false);
-        setShowCareers(false);
-        setShowAboutUs(false);
-        setShowEventPage(false);
-    };
-
-    const handleShowLogin = () => {
-        setShowLogin(true);
-        setShowRegister(false);
-        setShowCareers(false);
-        setShowAboutUs(false);
-        setShowEventPage(false);
-    };
-
-    const handleShowCareers = () => {
-        setShowCareers(true);
-        setShowRegister(false);
-        setShowLogin(false);
-        setShowAboutUs(false);
-        setShowEventPage(false);
+    // Function to render the correct page based on the currentPage state
+    const renderPage = () => {
+        switch (currentPage) {
+            case "register":
+                return <Register className="register" onSignInClick={() => setCurrentPage("login")} />;
+            case "login":
+                return <Login />;
+            case "careers":
+                return (
+                    <>
+                        <Navbarr
+                            className="Navbarr"
+                            setShowRegister={() => setCurrentPage("register")}
+                            setShowCareers={() => setCurrentPage("careers")}
+                            setShowAboutUs={() => setCurrentPage("aboutus")}
+                            resetHomePage={() => setCurrentPage("home")}
+                            setShowEventPage={() => setCurrentPage("events")}
+                            setShowAdvice={() => setCurrentPage("advice")}
+                        />
+                        <Jobs />
+                    </>
+                );
+            case "aboutus":
+                return (
+                    <>
+                        <Navbarr
+                            className="Navbarr"
+                            setShowRegister={() => setCurrentPage("register")}
+                            setShowCareers={() => setCurrentPage("careers")}
+                            setShowAboutUs={() => setCurrentPage("aboutus")}
+                            resetHomePage={() => setCurrentPage("home")}
+                            setShowEventPage={() => setCurrentPage("events")}
+                            setShowAdvice={() => setCurrentPage("advice")}
+                        />
+                        <AboutUs />
+                    </>
+                );
+            case "events":
+                return (
+                    <>
+                        <Navbarr
+                            className="Navbarr"
+                            setShowRegister={() => setCurrentPage("register")}
+                            setShowCareers={() => setCurrentPage("careers")}
+                            setShowAboutUs={() => setCurrentPage("aboutus")}
+                            resetHomePage={() => setCurrentPage("home")}
+                            setShowEventPage={() => setCurrentPage("events")}
+                            setShowAdvice={() => setCurrentPage("advice")}
+                        />
+                        <EventPage />
+                    </>
+                );
+            case "advice":
+                return (
+                    <>
+                        <Navbarr
+                            className="Navbarr"
+                            setShowRegister={() => setCurrentPage("register")}
+                            setShowCareers={() => setCurrentPage("careers")}
+                            setShowAboutUs={() => setCurrentPage("aboutus")}
+                            resetHomePage={() => setCurrentPage("home")}
+                            setShowEventPage={() => setCurrentPage("events")}
+                            setShowAdvice={() => setCurrentPage("advice")}
+                        />
+                        <Advice />
+                    </>
+                );
+            case "home":
+            default:
+                return (
+                    <>
+                        <NetworkBackground/>
+                        <TextGradient />
+                        <footer>
+                            <ContactUs className3="imgg" className1="info" className2="nav" />
+                        </footer>
+                    </>
+                );
+        }
     };
 
     return (
         <>
-            <NetworkBackground />
+            
             
             {/* Afficher la barre de navigation si aucune page n'est sélectionnée */}
-            {!showRegister && !showLogin && !showCareers && !showAboutUs && !showEventPage && (
+            {currentPage === "home" && (
                 <div className="barre">
                     <img className="petitlogo" src={logo} alt="Logo" />
                     <Navbarr
                         className="Navbarr"
-                        setShowRegister={handleShowRegister}
-                        setShowCareers={handleShowCareers}
-                        setShowAboutUs={handleShowAboutUs}
-                        setShowEventPage={handleShowEventPage}
+                        setShowRegister={() => setCurrentPage("register")}
+                        setShowCareers={() => setCurrentPage("careers")}
+                        setShowAboutUs={() => setCurrentPage("aboutus")}
+                        resetHomePage={() => setCurrentPage("home")}
+                        setShowEventPage={() => setCurrentPage("events")}
+                        setShowAdvice={() => setCurrentPage("advice")}
                     />
                 </div>
             )}
 
-            {/* Page Register */}
-            {showRegister && (
-                <div>
-                    <img className="petitlogo" src={logo} alt="Logo" />
-                    <Register className="register" onSignInClick={handleShowLogin} />
-                </div>
-            )}
-
-            {/* Page Login */}
-            {showLogin && (
-                <div>
-                    <img className="petitlogo" src={logo} alt="Logo" />
-                    <Login />
-                </div>
-            )}
-
-            {/* Page Careers */}
-            {showCareers && (
-                <div className="CareersNavbar">
-                    <img className="petitlogo" src={logo} alt="Logo" />
-                    <Navbarr
-                        className="Navbarr"
-                        setShowRegister={handleShowRegister}
-                        setShowCareers={handleShowCareers}
-                        setShowAboutUs={handleShowAboutUs}
-                        resetHomePage={handleShowHome}
-                        setShowEventPage={handleShowEventPage}
-                    />
-                    <Jobs />
-                </div>
-            )}
-
-            {/* Page Event */}
-            {showEventPage && (
-                <div className="EventPageNavbar">
-                    <img className="petitlogo" src={logo} alt="Logo" />
-                    <Navbarr
-                        className="Navbarr"
-                        setShowRegister={handleShowRegister}
-                        setShowCareers={handleShowCareers}
-                        setShowAboutUs={handleShowAboutUs}
-                        resetHomePage={handleShowHome}
-                    />
-                    <EventPage />
-                </div>
-            )}
-
-            {/* Page AboutUs */}
-            {showAboutUs && (
-                <div className="AboutusNavbar">
-                    <img className="petitlogo" src={logo} alt="Logo" />
-                    <Navbarr
-                        className="Navbarr"
-                        setShowRegister={handleShowRegister}
-                        setShowCareers={handleShowCareers}
-                        setShowAboutUs={handleShowAboutUs}
-                        resetHomePage={handleShowHome}
-                    />
-                    <AboutUs />
-                </div>
-            )}
-
-            {/* Page d'accueil (TextGradient et footer) */}
-            {!showRegister && !showLogin && !showCareers && !showAboutUs && !showEventPage && (
-                <>
-                    <TextGradient />
-                    <footer>
-                        <ContactUs className3="imgg" className1="info" className2="nav" />
-                    </footer>
-                </>
-            )}
+            {/* Afficher la page sélectionnée */}
+            {renderPage()}
         </>
     );
 }
