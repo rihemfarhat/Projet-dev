@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css'; // Utilisez le CSS mis à jour
+import './advice.css'; // Utilisez le CSS mis à jour
 
 const AdviceBox = ({ title, children, icon }) => (
   <div className="advice-box">
