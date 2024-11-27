@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "./App.css";  // Importez le fichier CSS
+import "./login.css";  // Importez le fichier CSS
 
 const Login = () => {
     const navigate = useNavigate();
@@ -28,15 +28,7 @@ const Login = () => {
                     <a href="#">Register</a>
                 </span>
             </p>
-            {/* Bouton dynamique avec cadre décoré */}
-            <button 
-                className={`button-main-page ${isHovered ? "hovered" : ""}`} 
-                onClick={goToMainPage}
-                onMouseEnter={() => setIsHovered(true)}  // Activation du survol
-                onMouseLeave={() => setIsHovered(false)}  // Désactivation du survol
-            >
-                Go to Main Page
-            </button>
+
         </section>
     );
 };
