@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom"; // Importer Link pour la navigation
+import './navbar.css'
 
 function Navbarr({ className, setShowRegister, setShowCareers, setShowAdvice, setShowAboutUs, resetHomePage, setShowEventPage }) {
     const list = ["Home", "About Us", "Events", "Careers", "Career Advice", "Register"];
