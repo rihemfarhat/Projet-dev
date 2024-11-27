@@ -78,6 +78,7 @@
     flex: 1; /* Donne une largeur égale au texte */
 }
 
+ 
 .who-are-we .image {
     flex: 1; /* Donne une largeur égale à l'image */
     text-align: center; /* Centre l'image horizontalement */
@@ -229,10 +230,7 @@
     font-size: 14px;
   }
   
-  .question-item:hover .answer {
-    display: block;
-  }
-  
+  .questions-list h2{margin-bottom: 50px;}
   
 
   .section.mission {

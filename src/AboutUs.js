@@ -85,8 +85,9 @@ function AboutUs() {
             </section>
 
             <section className="section questions">
-  <h2>Frequently Asked Questions</h2>
+  
   <div className="questions-list">
+    <h2>Frequently Asked Questions</h2>
     <div className="question-item">
       <h3 className="question">How do I apply for a job on your platform?</h3>
       <p className="answer">
