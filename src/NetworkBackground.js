@@ -82,7 +82,7 @@ const NetworkBackground = () => {
         return () => window.removeEventListener('resize', resizeCanvas);
     }, []);
 
-    return <canvas ref={canvasRef} style={{ position: 'fixed', top: 0, left: 0, zIndex: -1 }} />;
+    return <canvas ref={canvasRef} style={{ position: 'absolute', top: 0, left: 0, botton:0, zIndex: -1, borderRadius:50,marginTop:250,height: '450px', width:'100%', }} />;
 };
 
 export default NetworkBackground;

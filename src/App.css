@@ -101,7 +101,7 @@
 
 
 /*Tunisian Startup*/
-/*4d53bf*/
+
 
 #text {
   background: linear-gradient(330deg, rgb(251, 251, 251), #4A919E); /* Dégradé souhaité */
@@ -111,7 +111,7 @@
   font-size: 5rem; /* Ajustez la taille selon vos besoins */
   font-weight: bold; /* Optionnel pour un texte en gras */
   background-color: transparent; /* Assurez-vous que le fond est transparent */
-  margin-top: 50px; margin-left: 460px ; font-size:120px; text-align: center;line-height: 150px;
+  margin-top: 0px; margin-left: 460px ; font-size:120px; text-align: center;line-height: 150px;
   font-family: 'Courier New', Courier, 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; margin-top: 100px;margin-bottom: 300px;
 }
 
@@ -1012,3 +1012,5 @@ table {
 .advice-footer p {
   color: #666;
 }
+
+
