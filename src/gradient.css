@@ -1,0 +1,15 @@
+/*Tunisian Startup*/
+
+
+#text {
+    background: linear-gradient(330deg, rgb(251, 251, 251), #4A919E); /* Dégradé souhaité */
+    -webkit-background-clip: text; /* Appliquer le dégradé au texte */
+    -webkit-text-fill-color: transparent; /* Rendre le texte transparent */
+    display: inline-block; /* Nécessaire pour que le clipping fonctionne */
+    font-size: 5rem; /* Ajustez la taille selon vos besoins */
+    font-weight: bold; /* Optionnel pour un texte en gras */
+    background-color: transparent; /* Assurez-vous que le fond est transparent */
+    margin-top: 0px; margin-left: 460px ; font-size:120px; text-align: center;line-height: 150px;
+    font-family: 'Courier New', Courier, 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; margin-top: 170px;margin-bottom: 300px;
+  }
+  

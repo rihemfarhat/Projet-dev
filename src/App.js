@@ -10,7 +10,7 @@ import Jobs from "./Jobs";
 import AboutUs from "./AboutUs";
 import EventPage from "./EventPage";
 import Advice from "./Advice";
-import logo from './lde---curated---13-high-resolution-logo-transparent.png';
+import logo from './Capture_d_écran_2024-11-09_210108-removebg-preview.png';
 
 function App() {
     const [currentPage, setCurrentPage] = useState("home");
@@ -36,9 +36,6 @@ function App() {
                     <>
                         <NetworkBackground />
                         <TextGradient />
-                        <footer>
-                            <ContactUs className3="imgg" className1="info" className2="nav" />
-                        </footer>
                     </>
                 );
         }
@@ -60,8 +57,13 @@ function App() {
                 />
             </div>
 
-            {/* Afficher la page sélectionnée */}
+            {/* Contenu de la page */}
             {renderPage()}
+
+            {/* Footer toujours visible */}
+            <footer>
+                <ContactUs className3="imgg" className1="info" className2="nav" />
+            </footer>
         </>
     );
 }

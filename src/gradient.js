@@ -1,6 +1,7 @@
 // TextGradient.js
-import React from 'react';
-import './App.css'; // Assurez-vous que le fichier CSS est importé
+import React from 'react'
+
+import './gradient.css'; // Assurez-vous que le fichier CSS est importé
 
 const TextGradient = () => {
     return (
