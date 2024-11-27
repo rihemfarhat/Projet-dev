@@ -8,8 +8,11 @@ const NetworkBackground = () => {
         const ctx = canvas.getContext('2d');
         
         // Configure le canvas pour occuper tout l'écran
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
+        const resizeCanvas = () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        };
+        resizeCanvas();
 
         const particles = [];
         const particleCount = 100;
@@ -72,17 +75,20 @@ const NetworkBackground = () => {
         animate();
 
         // Redimensionne le canvas lors du changement de taille de la fenêtre
-        const resizeCanvas = () => {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-        };
         window.addEventListener('resize', resizeCanvas);
 
         // Nettoyage à la fin
         return () => window.removeEventListener('resize', resizeCanvas);
     }, []);
 
-    return <canvas ref={canvasRef} style={{ position: 'fixed', top: 0, left: 0, zIndex: -1 }} />;
+    return <canvas ref={canvasRef} style={{
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        zIndex: -1,
+        height: '100vh',
+        width: '100vw',
+    }} />;
 };
 
 export default NetworkBackground;

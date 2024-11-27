@@ -23,74 +23,19 @@ function App() {
             case "login":
                 return <Login />;
             case "careers":
-                return (
-                    <>
-                        <Navbarr
-                            className="Navbarr"
-                            setShowRegister={() => setCurrentPage("register")}
-                            setShowCareers={() => setCurrentPage("careers")}
-                            setShowAboutUs={() => setCurrentPage("aboutus")}
-                            resetHomePage={() => setCurrentPage("home")}
-                            setShowEventPage={() => setCurrentPage("events")}
-                            setShowAdvice={() => setCurrentPage("advice")}
-                        />
-                        <Jobs />
-                    </>
-                );
+                return <Jobs />;
             case "aboutus":
-                return (
-                    <>
-                        <Navbarr
-                            className="Navbarr"
-                            setShowRegister={() => setCurrentPage("register")}
-                            setShowCareers={() => setCurrentPage("careers")}
-                            setShowAboutUs={() => setCurrentPage("aboutus")}
-                            resetHomePage={() => setCurrentPage("home")}
-                            setShowEventPage={() => setCurrentPage("events")}
-                            setShowAdvice={() => setCurrentPage("advice")}
-                        />
-                        <AboutUs />
-                    </>
-                );
+                return <AboutUs />;
             case "events":
-                return (
-                    <>
-                        <Navbarr
-                            className="Navbarr"
-                            setShowRegister={() => setCurrentPage("register")}
-                            setShowCareers={() => setCurrentPage("careers")}
-                            setShowAboutUs={() => setCurrentPage("aboutus")}
-                            resetHomePage={() => setCurrentPage("home")}
-                            setShowEventPage={() => setCurrentPage("events")}
-                            setShowAdvice={() => setCurrentPage("advice")}
-                        />
-                        <EventPage />
-                    </>
-                );
+                return <EventPage />;
             case "advice":
-                return (
-                    <>
-                        <Navbarr
-                            className="Navbarr"
-                            setShowRegister={() => setCurrentPage("register")}
-                            setShowCareers={() => setCurrentPage("careers")}
-                            setShowAboutUs={() => setCurrentPage("aboutus")}
-                            resetHomePage={() => setCurrentPage("home")}
-                            setShowEventPage={() => setCurrentPage("events")}
-                            setShowAdvice={() => setCurrentPage("advice")}
-                        />
-                        <Advice />
-                    </>
-                );
+                return <Advice />;
             case "home":
             default:
                 return (
                     <>
-                        <NetworkBackground/>
+                        <NetworkBackground />
                         <TextGradient />
-                        <footer>
-                            <ContactUs className3="imgg" className1="info" className2="nav" />
-                        </footer>
                     </>
                 );
         }
@@ -98,26 +43,27 @@ function App() {
 
     return (
         <>
-            
-            
-            {/* Afficher la barre de navigation si aucune page n'est sélectionnée */}
-            {currentPage === "home" && (
-                <div className="barre">
-                    <img className="petitlogo" src={logo} alt="Logo" />
-                    <Navbarr
-                        className="Navbarr"
-                        setShowRegister={() => setCurrentPage("register")}
-                        setShowCareers={() => setCurrentPage("careers")}
-                        setShowAboutUs={() => setCurrentPage("aboutus")}
-                        resetHomePage={() => setCurrentPage("home")}
-                        setShowEventPage={() => setCurrentPage("events")}
-                        setShowAdvice={() => setCurrentPage("advice")}
-                    />
-                </div>
-            )}
+            {/* Navbar toujours visible */}
+            <div className="barre">
+                <img className="petitlogo" src={logo} alt="Logo" />
+                <Navbarr
+                    className="Navbarr"
+                    setShowRegister={() => setCurrentPage("register")}
+                    setShowCareers={() => setCurrentPage("careers")}
+                    setShowAboutUs={() => setCurrentPage("aboutus")}
+                    resetHomePage={() => setCurrentPage("home")}
+                    setShowEventPage={() => setCurrentPage("events")}
+                    setShowAdvice={() => setCurrentPage("advice")}
+                />
+            </div>
 
-            {/* Afficher la page sélectionnée */}
+            {/* Contenu de la page */}
             {renderPage()}
+
+            {/* Footer toujours visible */}
+            <footer>
+                <ContactUs className3="imgg" className1="info" className2="nav" />
+            </footer>
         </>
     );
 }
