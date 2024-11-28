@@ -50,67 +50,6 @@
 
 
 
-/*Footer*/
-
-footer {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  padding: 30px;
-  gap: 80px;
-  background: linear-gradient(to top, #4A919E, #212E53); /* Dégradé harmonieux */ /* Semi-transparent for better blur visibility */
-  box-shadow: 0 -4px 8px  #4A919E;
-  border-radius: 20px;
-
-}
-
-
-
-.nav, .info {
-  color: #f0f0f0;
-  border-collapse: collapse;
-}
-
-.info caption, .nav caption {
-  color:#212E53;
-  font-size: 1.6rem;
-  font-family: 'Georgia', serif;
-  font-weight: bold;
-  margin-bottom: 20px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-weight: bold;
-  text-align: left;
-}
-
-.info td, .nav td {
-  padding: 8px 10px;
-  font-size: 1rem;
-  color: white;
-}
-
-.info td:hover, .nav td:hover {
-  color: #CE6A6B;
-  cursor: pointer;
-  transition: color 0.3s;
-}
-
-.imgg {width: 500px ; height: 150px;padding-top: 50px;}
-
-
-
-
-
-
-
-
-
-/*LOGIN*/
-
-
-
-
-
 /* Page CV Submission */
 .cv-submission {
   background: linear-gradient(to right, #BED3C3, #212E53); /* Dégradé harmonieux */ /* Semi-transparent for better blur visibility */
