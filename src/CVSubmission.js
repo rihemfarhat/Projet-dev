@@ -1,6 +1,6 @@
 // CVSubmission.js
 import React, { useState } from "react";
-import './App.css';
+import './cvsubmission.css';
 
 
 function CVSubmission({ jobTitle, onBack }) {

@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
-import './App.css';
+import "./events.css";
 
 const EventPage = () => {
-  // État pour stocker les événements
   const [events, setEvents] = useState([]);
-  const [filteredEvents, setFilteredEvents] = useState([]);
+  const [visibleEvents, setVisibleEvents] = useState(3); // Number of events initially visible
+  const [showMore, setShowMore] = useState(false); // Track whether to show more events
 
-  // Charger les données d'événements
+  // Load mock event data
   useEffect(() => {
     const mockEvents = [
       {
@@ -14,106 +14,107 @@ const EventPage = () => {
         title: "Startup Weekend Tunis",
         date: "2024-11-20",
         location: "Tunis",
-        description: "Un événement pour booster votre startup.",
+        description: "An event to boost your startup.",
       },
       {
         id: 2,
         title: "Hackathon Carthage",
         date: "2024-12-10",
         location: "Carthage",
-        description: "Développez des solutions innovantes.",
+        description: "Develop innovative solutions.",
       },
       {
         id: 3,
-        title: "Conférence sur l'IA",
+        title: "AI Conference",
         date: "2024-11-25",
         location: "Sfax",
-        description: "Découvrez les dernières avancées en intelligence artificielle.",
+        description: "Discover the latest advancements in artificial intelligence.",
       },
       {
         id: 4,
-        title: "Forum des Startups",
+        title: "Startup Forum",
         date: "2024-12-05",
         location: "Tunis",
-        description: "Forum dédié aux entrepreneurs et aux investisseurs.",
+        description: "A forum dedicated to entrepreneurs and investors.",
       },
       {
         id: 5,
-        title: "Atelier de Code pour Débutants",
+        title: "Beginner Coding Workshop",
         date: "2024-12-01",
         location: "Sousse",
-        description: "Apprenez à coder en quelques heures.",
+        description: "Learn to code in just a few hours.",
       },
       {
         id: 6,
-        title: "Cérémonie des Prix de l'Innovation",
+        title: "Innovation Awards Ceremony",
         date: "2024-12-15",
         location: "Monastir",
-        description: "Célébration des meilleures innovations technologiques de l'année.",
+        description: "Celebrating the best technological innovations of the year.",
       },
       {
         id: 7,
-        title: "Séminaire sur le Développement Durable",
+        title: "Sustainable Development Seminar",
         date: "2024-12-03",
         location: "Tunis",
-        description: "Un séminaire pour explorer des solutions écologiques.",
+        description: "A seminar exploring ecological solutions.",
       },
       {
         id: 8,
-        title: "Salon de l'Entrepreneuriat Féminin",
+        title: "Women Entrepreneurship Fair",
         date: "2024-12-12",
         location: "Carthage",
-        description: "Un événement dédié aux femmes entrepreneures.",
+        description: "An event dedicated to female entrepreneurs.",
       },
     ];
 
     setEvents(mockEvents);
-    setFilteredEvents(mockEvents);
   }, []);
 
-  // Fonction de filtrage
-  const handleFilter = (keyword) => {
-    const filtered = events.filter((event) =>
-      event.title.toLowerCase().includes(keyword.toLowerCase())
-    );
-    setFilteredEvents(filtered);
-  };
-
-  // Fonction pour gérer la participation
-  const handleParticipate = (eventId) => {
-    const event = events.find((e) => e.id === eventId);
-    alert(`Vous êtes inscrit à l'événement : ${event.title}`);
+  // Toggle visibility of events
+  const toggleEvents = () => {
+    setShowMore(!showMore);
+    setVisibleEvents(showMore ? 3 : events.length); // Toggle between initial and full list
   };
 
   return (
     <div className="event-page-container">
-      <h1 className="event-page-title">Événements</h1>
+      {/* Page Title */}
+      <header>
+        <h1 className="event-page-title">Upcoming Events</h1>
+        <p className="event-intro">
+          Discover a curated selection of events designed to foster innovation, learning, and networking. 
+          Whether you're an entrepreneur, student, or professional, you'll find an event tailored to your needs.
+        </p>
+      </header>
 
-      {/* Barre de recherche */}
-      <input
-        type="text"
-        className="search-input"
-        placeholder="Rechercher un événement..."
-        onChange={(e) => handleFilter(e.target.value)}
-      />
-
-      {/* Liste des événements */}
+      {/* Event Cards */}
       <div className="event-grid">
-        {filteredEvents.map((event) => (
+        {events.slice(0, visibleEvents).map((event) => (
           <div key={event.id} className="event-card">
             <h2 className="event-title">{event.title}</h2>
-            <p className="event-date"><strong>Date :</strong> {event.date}</p>
-            <p className="event-location"><strong>Lieu :</strong> {event.location}</p>
+            <p className="event-date">
+              <strong>Date:</strong> {event.date}
+            </p>
+            <p className="event-location">
+              <strong>Location:</strong> {event.location}
+            </p>
             <p className="event-description">{event.description}</p>
             <button
-              onClick={() => handleParticipate(event.id)}
+              onClick={() => alert(`You are signed up for the event: ${event.title}`)}
               className="participate-button"
             >
-              Participer
+              Participate
             </button>
           </div>
         ))}
       </div>
+
+      {/* Toggle Button */}
+      {events.length > 3 && (
+        <button onClick={toggleEvents} className="toggle-button">
+          {showMore ? "Show Less" : "Show More"}
+        </button>
+      )}
     </div>
   );
 };
