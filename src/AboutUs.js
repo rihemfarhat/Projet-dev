@@ -17,6 +17,9 @@ function AboutUs() {
         <div className="about-us">
             {/* Section 1: Who Are We */}
             <section className="section who-are-we">
+            <div className="image">
+                    <img src="startup.png" alt="Startup Illustration" />
+                </div>
                 <div className="content">
                     <h2>Who Are We</h2>
                     <p>
@@ -26,9 +29,7 @@ function AboutUs() {
                         competitive landscape.
                     </p>
                 </div>
-                <div className="image">
-                    <img src="startup.png" alt="Startup Illustration" />
-                </div>
+               
             </section>
 
             

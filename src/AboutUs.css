@@ -1,9 +1,5 @@
 /* Conteneur principal pour activer le scroll snapping */
-.about-us {
-    scroll-snap-type: y mandatory; /* Défilement vertical forcé */
-    overflow-y: scroll; /* Permet le défilement vertical */
-    height: 80vh; /* Toute la hauteur de l'écran */
-}
+
 
 /* Style pour chaque section */
 .section {
@@ -42,7 +38,7 @@
     font-size: 3rem; /* Taille du titre */
     font-weight: bold;
     text-align: center;
-    margin: 0 0 20px 0; /* Ajoute un espace en bas (20px) entre le titre et le contenu */
+    margin: -100px 0 20px 0; /* Ajoute un espace en bas (20px) entre le titre et le contenu */
     position: relative;
     top: 20px;
     animation: fadeIn 1.2s ease-in-out;
@@ -82,12 +78,16 @@
 .who-are-we .image {
     flex: 1; /* Donne une largeur égale à l'image */
     text-align: center; /* Centre l'image horizontalement */
+   
 }
 
 .who-are-we .image img {
-    max-width: 100%; /* L'image ne dépasse pas sa zone */
+    max-width:85%; /* L'image ne dépasse pas sa zone */
     height: auto; /* Maintient les proportions de l'image */
-    border-radius: 10px; /* Ajoute un effet arrondi */
+    border-top-right-radius: 40%;
+    border-bottom-right-radius: 40%;
+
+
 }
 
 .founders-grid {
