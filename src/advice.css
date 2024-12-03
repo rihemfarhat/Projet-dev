@@ -1,9 +1,6 @@
-<<<<<<< HEAD
-=======
-/* advice */
->>>>>>> d0634e6b44f62c9ba7cbfefc4f9d7df03eb0be3e
 
-/* Style global */
+
+
 .Advice {
     font-family: Arial, sans-serif;
     padding: 20px;
@@ -18,11 +15,9 @@
   
   .advice-header h1 {
     font-size: 2rem;
-<<<<<<< HEAD
     color: #211eca;
-=======
+
     color: #212E53;
->>>>>>> d0634e6b44f62c9ba7cbfefc4f9d7df03eb0be3e
   }
   
   .advice-section {
@@ -37,22 +32,18 @@
     background: #f9f9f9;
     padding: 20px;
     border-radius: 10px;
-<<<<<<< HEAD
     box-shadow: 0 4px 8px rgba(108, 194, 209, 0.1);
-=======
+
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
->>>>>>> d0634e6b44f62c9ba7cbfefc4f9d7df03eb0be3e
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
   
   .advice-box:hover {
     transform: translateY(-5px);
-<<<<<<< HEAD
     box-shadow: 0 6px 12px rgba(84, 147, 189, 0.2);
-=======
+
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
->>>>>>> d0634e6b44f62c9ba7cbfefc4f9d7df03eb0be3e
   }
   
   /* Icone dans chaque box */
@@ -68,11 +59,11 @@
     content: '';
     position: absolute;
     z-index: 0;
-<<<<<<< HEAD
+
     background: #4d74e0;
-=======
+
     background: #212E53;
->>>>>>> d0634e6b44f62c9ba7cbfefc4f9d7df03eb0be3e
+
     opacity: 0.1;
     transition: all 0.3s ease;
   }
@@ -102,11 +93,10 @@
   
   /* Style des titres */
   .advice-box h3 {
-<<<<<<< HEAD
+
     color: #1136da;
-=======
+
     color: #333;
->>>>>>> d0634e6b44f62c9ba7cbfefc4f9d7df03eb0be3e
     margin: 10px 0;
     position: relative;
     z-index: 1;
@@ -127,11 +117,9 @@
   }
   
   .advice-footer h3 {
-<<<<<<< HEAD
     color: #326edd;
-=======
     color: #212E53;
->>>>>>> d0634e6b44f62c9ba7cbfefc4f9d7df03eb0be3e
+
   }
   
   .advice-footer p {
