@@ -31,24 +31,7 @@ function AboutUs() {
                 </div>
             </section>
 
-            {/* Section 2: Our Mission */}
-            <section className="section mission">
-    <h2>Our Mission & Vision</h2>
-    <div className="mission-content">
-        <div className="text-content">
-            <p>
-                Our mission is to create a vibrant ecosystem where startups can thrive by connecting them with top talent, resources, and opportunities for meaningful collaborations. We aim to simplify the recruitment process and support companies in focusing on their core vision and goals. By facilitating strategic partnerships, knowledge sharing, and cross-industry collaborations, we empower startups to accelerate their growth, innovate, and adapt to evolving market demands.
-            </p>
-            <p>
-                Our vision is to build a dynamic community that champions entrepreneurship and fosters a culture of innovation, inclusivity, and resilience. We believe in the power of diverse perspectives, continuous learning, and iterative experimentation to drive impactful change in the startup ecosystem. By bridging the gap between startups, investors, industry experts, and academic institutions, we aim to create an environment where groundbreaking ideas can flourish, and meaningful connections lead to successful, sustainable business solutions.
-            </p>
-        </div>
-        <div className="image-content">
-            <img src="visiion.png" alt="Our Mission" />
-        </div>
-    </div>
-</section>
-
+            
 
 
             {/* Section 3: What We Do */}
@@ -122,8 +105,9 @@ function AboutUs() {
                         className={`founder-card ${activeFounder === "rihem" ? "active" : ""}`}
                         onClick={() => toggleDescription("rihem")}
                     >
+                        <h6>Rihem Farhat - Co-Founder</h6>
+
                         <img src={photorihem} alt="Rihem Farhat" />
-                        <p>Rihem Farhat - Co-Founder</p>
                         <div className="description">
                             Rihem Farhat is an engineer from Telecom Supcom, with a passion for technology 
                             and innovation. She has played a key role in developing and leading projects 
@@ -134,8 +118,9 @@ function AboutUs() {
                         className={`founder-card ${activeFounder === "siwar" ? "active" : ""}`}
                         onClick={() => toggleDescription("siwar")}
                     >
+                        <h6>Siwar Ben Ammar - Co-Founder</h6>
+
                         <img src={photosiwar} alt="Siwar Ben Ammar" />
-                        <p>Siwar Ben Ammar - Co-Founder</p>
                         <div className="description">
                             Siwar Ben Ammar is an engineer from Telecom Supcom, specializing in 
                             communication technologies. She is committed to promoting entrepreneurship 

@@ -39,30 +39,13 @@
   }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*Footer*/
 
 footer {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  padding: 30px;
+  padding: 10px;
   gap: 80px;
   background: linear-gradient(to top, #4A919E, #212E53); /* Dégradé harmonieux */ /* Semi-transparent for better blur visibility */
   box-shadow: 0 -4px 8px  #4A919E;
@@ -96,7 +79,7 @@ footer {
 }
 
 .info td:hover, .nav td:hover {
-  color: #CE6A6B;
+  color: #3314e7;
   cursor: pointer;
   transition: color 0.3s;
 }
@@ -794,4 +777,3 @@ table {
 }
 
 
->>>>>>> 9f6336e01d2477fbb4fd31848b8eca13681e4999
