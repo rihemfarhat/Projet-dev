@@ -1,133 +1,93 @@
-/* Overall Event Page Styling */
 .event-page-container {
     padding: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-     /* Soft greenish background */
-    color: #212E53; /* Deep blue for text */
-    font-family: 'Roboto', sans-serif;
-}
-
-/* Event Page Title */
-.event-page-title {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
+    font-family: Arial, sans-serif;
+    max-width: 75%; /* Limite la largeur de la page */
+    margin: 0 auto; /* Centre la page horizontalement */
+  }
+  
+  .event-page-title {
     text-align: center;
-    font-family: 'Playfair Display', serif;
-    color: #212E53; /* Deep blue for the title */
-}
-
-/* Introductory Paragraph */
-.event-intro {
-    font-size: 1.2rem;
-    text-align: center;
+    margin-top: 50px;
+    font-size: 3rem;
     margin-bottom: 30px;
-    line-height: 1.6;
-    color: #4A919E; /* Medium blue-green for paragraph text */
-}
-
-/* Grid Layout for Events */
-.event-grid {
+    color: rgb(4, 4, 83);
+  }
+  
+  .event-intro {
+    text-align: center;
+    margin-bottom: 100px;
+    font-size: 1rem;
+    color: #555;
+  }
+  
+  .event-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
-    gap: 20px;
-    transition: all 0.5s ease;
-}
-
-/* Individual Event Cards */
-.event-card {
-    background: linear-gradient(145deg, #5FC2BA, #4A919E); /* Blue-green gradient */
-    border-radius: 12px;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.event-card:hover {
-    transform: translateY(-7px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
-}
-
-/* Event Title */
-.event-title {
-    font-size: 1.8rem;
-    margin: 0 0 10px 0;
-    color: #212E53; /* Deep blue for titles */
-    font-family: 'Playfair Display', serif;
-}
-
-/* Event Details */
-.event-date, 
-.event-location, 
-.event-description {
-    font-size: 1rem;
-    margin: 10px 0;
-    line-height: 1.5;
-    color: #F5F5F5; /* Light text for readability */
-}
-
-.event-date strong, 
-.event-location strong {
-    color: #212E53; /* Deep blue for labels */
-}
-
-/* Participate Button */
-.participate-button {
-    background-color: #212E53; /* Deep blue */
-    color: #F5F5F5;
-    border: 2px solid #5FC2BA; /* Accent with blue-green */
-    padding: 10px 20px;
-    font-size: 1rem;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.participate-button:hover {
-    background-color: #5FC2BA; /* Blue-green on hover */
-    color: #212E53; /* Text switches to deep blue */
-}
-
-/* Toggle Button */
-.toggle-button {
-    background-color: #4A919E;
-    color: #FFFFFF;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+  }
+  
+  .event-card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.2s ease-in-out;
+    display: flex; /* Utilisation de Flexbox */
+    flex-direction: column; /* Alignement vertical des éléments */
+    justify-content: space-between; /* Distribue l'espace pour positionner le bouton en bas */
+    height: 100%; /* Permet à toutes les cartes d’avoir la même hauteur */
+  }
+  
+  .event-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .event-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .event-title {
     font-size: 1.5rem;
-    border: none;
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
+    margin: 10px;
+    color: rgb(6, 6, 69);
+  }
+  
+  .event-date,
+  .event-location,
+  .event-description {
+    margin: 10px;
+    color: #555;
+  }
+  
+  .participate-button {
     display: block;
-    margin: 20px auto;
+    margin: 10px auto;
+    padding: 10px 20px;
+    background-color: #031b34;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
     cursor: pointer;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
-}
-
-.toggle-button:hover {
-    background-color: #5FC2BA;
-    transform: scale(1.1);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-}
-
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-    .event-page-title {
-        font-size: 2rem;
-    }
-
-    .event-intro {
-        font-size: 1rem;
-    }
-
-    .event-grid {
-        grid-template-columns: 1fr; /* Single-column layout for smaller screens */
-    }
-
-    .event-card {
-        padding: 15px;
-    }
-}
+  }
+  
+  .participate-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .toggle-button {
+    
+    display: block;
+    
+    background-color: #0c0d5f;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .toggle-button:hover {
+    background-color: #1e337e;
+  }
+  

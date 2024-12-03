@@ -3,10 +3,10 @@ import "./events.css";
 
 const EventPage = () => {
   const [events, setEvents] = useState([]);
-  const [visibleEvents, setVisibleEvents] = useState(3); // Number of events initially visible
-  const [showMore, setShowMore] = useState(false); // Track whether to show more events
+  const [visibleEvents, setVisibleEvents] = useState(3); // Nombre d'événements affichés initialement
+  const [showMore, setShowMore] = useState(false); // État pour basculer entre "Voir plus" et "Voir moins"
 
-  // Load mock event data
+  // Chargement des données des événements
   useEffect(() => {
     const mockEvents = [
       {
@@ -15,6 +15,7 @@ const EventPage = () => {
         date: "2024-11-20",
         location: "Tunis",
         description: "An event to boost your startup.",
+        image: "/images/startupweekend.png",
       },
       {
         id: 2,
@@ -22,6 +23,7 @@ const EventPage = () => {
         date: "2024-12-10",
         location: "Carthage",
         description: "Develop innovative solutions.",
+        image: "/images/hackathoncarthage.jpg",
       },
       {
         id: 3,
@@ -29,6 +31,7 @@ const EventPage = () => {
         date: "2024-11-25",
         location: "Sfax",
         description: "Discover the latest advancements in artificial intelligence.",
+        image: "/images/aiconference.jpg",
       },
       {
         id: 4,
@@ -36,6 +39,7 @@ const EventPage = () => {
         date: "2024-12-05",
         location: "Tunis",
         description: "A forum dedicated to entrepreneurs and investors.",
+        image: "/images/startupforum.png",
       },
       {
         id: 5,
@@ -43,6 +47,7 @@ const EventPage = () => {
         date: "2024-12-01",
         location: "Sousse",
         description: "Learn to code in just a few hours.",
+        image: "/images/codingworkshop.webp",
       },
       {
         id: 6,
@@ -50,6 +55,7 @@ const EventPage = () => {
         date: "2024-12-15",
         location: "Monastir",
         description: "Celebrating the best technological innovations of the year.",
+        image: "/images/awardceremony.jpg",
       },
       {
         id: 7,
@@ -57,6 +63,7 @@ const EventPage = () => {
         date: "2024-12-03",
         location: "Tunis",
         description: "A seminar exploring ecological solutions.",
+        image: "/images/susdev.jpg",
       },
       {
         id: 8,
@@ -64,33 +71,40 @@ const EventPage = () => {
         date: "2024-12-12",
         location: "Carthage",
         description: "An event dedicated to female entrepreneurs.",
+        image: "/images/women.jpg",
       },
     ];
 
     setEvents(mockEvents);
   }, []);
 
-  // Toggle visibility of events
+  // Fonction pour basculer entre les événements visibles
   const toggleEvents = () => {
     setShowMore(!showMore);
-    setVisibleEvents(showMore ? 3 : events.length); // Toggle between initial and full list
+    setVisibleEvents(showMore ? 3 : events.length);
   };
 
   return (
     <div className="event-page-container">
-      {/* Page Title */}
+      {/* Titre de la page */}
       <header>
-        <h1 className="event-page-title">Upcoming Events</h1>
+        <h1 className="event-page-title">EVENTS NEAR ME</h1>
         <p className="event-intro">
-          Discover a curated selection of events designed to foster innovation, learning, and networking. 
-          Whether you're an entrepreneur, student, or professional, you'll find an event tailored to your needs.
+          Discover a curated selection of events designed to foster innovation,
+          learning, and networking. Whether you're an entrepreneur, student, or
+          professional, you'll find an event tailored to your needs.
         </p>
       </header>
 
-      {/* Event Cards */}
+      {/* Cartes des événements */}
       <div className="event-grid">
         {events.slice(0, visibleEvents).map((event) => (
           <div key={event.id} className="event-card">
+            <img
+              src={event.image}
+              alt={`${event.title} image`}
+              className="event-image"
+            />
             <h2 className="event-title">{event.title}</h2>
             <p className="event-date">
               <strong>Date:</strong> {event.date}
@@ -100,7 +114,9 @@ const EventPage = () => {
             </p>
             <p className="event-description">{event.description}</p>
             <button
-              onClick={() => alert(`You are signed up for the event: ${event.title}`)}
+              onClick={() =>
+                alert(`You are signed up for the event: ${event.title}`)
+              }
               className="participate-button"
             >
               Participate
@@ -109,7 +125,7 @@ const EventPage = () => {
         ))}
       </div>
 
-      {/* Toggle Button */}
+      {/* Bouton pour basculer */}
       {events.length > 3 && (
         <button onClick={toggleEvents} className="toggle-button">
           {showMore ? "Show Less" : "Show More"}
