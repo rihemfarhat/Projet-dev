@@ -39,7 +39,7 @@
   }
 }
 
-<<<<<<< HEAD
+
 /*Footer*/
 
 footer {
@@ -561,18 +561,14 @@ table {
   background-color: #f0f0f0;
   color: #007bff;
 }
-=======
-
->>>>>>> d0634e6b44f62c9ba7cbfefc4f9d7df03eb0be3e
 
 
 
 
 
-<<<<<<< HEAD
-=======
+
+
 /*ajustement de navbar*/
->>>>>>> d0634e6b44f62c9ba7cbfefc4f9d7df03eb0be3e
 .AboutusNavbar .Navbarr, .CareersNavbar .Navbarr,.EventPageNavbar .Navbarr {
   margin-left: auto; 
   margin-right: auto;
@@ -581,7 +577,7 @@ table {
  
 }
 
-<<<<<<< HEAD
+
 
 /* Overall event page container */
 .event-page-container {
@@ -671,8 +667,6 @@ table {
 
 
 /* advice */
-<<<<<<< HEAD
-=======
 
 /* Style global */
 .Advice {
@@ -785,7 +779,5 @@ table {
   color: #666;
 }
 
-
-=======
 body{background-color: #B0CFD3;}
->>>>>>> d0634e6b44f62c9ba7cbfefc4f9d7df03eb0be3e
+
