@@ -43,27 +43,31 @@ function App() {
 
     return (
         <>
-            {/* Navbar toujours visible */}
-            <div className="barre">
-                <img className="petitlogo" src={logo} alt="Logo" />
-                <Navbarr
-                    className="Navbarr"
-                    setShowRegister={() => setCurrentPage("register")}
-                    setShowCareers={() => setCurrentPage("careers")}
-                    setShowAboutUs={() => setCurrentPage("aboutus")}
-                    resetHomePage={() => setCurrentPage("home")}
-                    setShowEventPage={() => setCurrentPage("events")}
-                    setShowAdvice={() => setCurrentPage("advice")}
-                />
-            </div>
+            {/* Afficher la Navbar et Footer seulement si on n'est pas sur la page login ou register */}
+            {currentPage !== "login" && currentPage !== "register" && (
+                <div className="barre">
+                    <img className="petitlogo" src={logo} alt="Logo" />
+                    <Navbarr
+                        className="Navbarr"
+                        setShowRegister={() => setCurrentPage("register")}
+                        setShowCareers={() => setCurrentPage("careers")}
+                        setShowAboutUs={() => setCurrentPage("aboutus")}
+                        resetHomePage={() => setCurrentPage("home")}
+                        setShowEventPage={() => setCurrentPage("events")}
+                        setShowAdvice={() => setCurrentPage("advice")}
+                    />
+                </div>
+            )}
 
             {/* Contenu de la page */}
             {renderPage()}
 
-            {/* Footer toujours visible */}
-            <footer>
-                <ContactUs className3="imgg" className1="info" className2="nav" />
-            </footer>
+            {/* Afficher le Footer seulement si on n'est pas sur la page login ou register */}
+            {currentPage !== "login" && currentPage !== "register" && (
+                <footer>
+                    <ContactUs className3="imgg" className1="info" className2="nav" />
+                </footer>
+            )}
         </>
     );
 }

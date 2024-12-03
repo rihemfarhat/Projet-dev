@@ -24,7 +24,7 @@
   color: white;
   padding : 0;
   border-radius: 20px;
-  width: 900px;
+  width: 100%;
   height: 100px;
   
   margin-right: 250px;
@@ -50,3 +50,78 @@
 }
 
 .Navbarr td:nth-of-type(6){background-color:#212E53;  border-radius: 20px; color: white; background-size:contain;}
+
+
+/* Style pour le menu horizontal */
+table {
+  width: 100%;
+}
+
+.horizontal-item {
+  padding: 10px;
+  text-align: center;
+}
+
+.menu-icon {
+  cursor: pointer;
+  padding: 10px;
+  font-size: 20px;
+}
+
+
+
+/* Conteneur de l'icône ☰ et du menu déroulant */
+.menu-container {
+  position: relative; /* Positionnement relatif pour que le menu soit positionné par rapport à cet élément */
+  display: inline-block; /* Assure que l'icône et le menu sont dans un flux cohérent */
+}
+
+/* Icône ☰ */
+.menu-icon {
+  cursor: pointer; /* Change le curseur sur l'icône */
+}
+
+/* Menu déroulant */
+.vertical-menu {
+  position: absolute; /* Positionne le menu par rapport à son conteneur parent */
+  top: 100%; /* Place le menu directement sous l'icône */
+  left: 0; /* Aligne le menu à gauche de l'icône */
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 1000;
+  opacity: 0; /* Menu caché par défaut */
+  visibility: hidden; /* Menu caché par défaut */
+  transition: opacity 0.3s ease, visibility 0s 0.3s; /* Transition pour rendre le menu visible */
+}
+
+/* Lorsque le menu est visible */
+.vertical-menu.show {
+  opacity: 1; /* Menu visible */
+  visibility: visible; /* Rendre visible */
+  transition: opacity 0.3s ease; /* Transition fluide pour le menu */
+}
+
+/* Style des éléments du menu */
+.vertical-item {
+  padding: 8px 12px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.vertical-item a, .vertical-item button {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  display: block;
+}
+
+.vertical-item a:hover, .vertical-item button:hover {
+  background-color: #f0f0f0;
+  color: #007bff;
+}

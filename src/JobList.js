@@ -1,5 +1,6 @@
 // JobList.js
 import React from "react";
+import './jobs.css'
 
 function JobList({ jobs, onApplyClick }) {
     return (
