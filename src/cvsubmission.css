@@ -69,6 +69,7 @@
     cursor: pointer;
     transition: all 0.3s ease;
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+    margin-top: 30px;
 }
 
 .cv-submission button:hover {
@@ -85,7 +86,8 @@
     padding: 12px 20px;
     cursor: pointer;
     font-size: 1.1em;
-    margin-top: 25px; /* Space between buttons */
+    margin-top: 25px;
+     /* Space between buttons */
     transition: background-color 0.3s ease;
 }
 

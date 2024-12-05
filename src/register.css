@@ -97,7 +97,9 @@
   text-decoration: none;
   font-size: 1.1em;
   margin-left: 170px;
+  padding-top: 100px;
   padding-bottom: 100px;
+  
 }
 
 /* Animations */
@@ -135,3 +137,6 @@
 .hide {
   display: none;
 }
+
+span {margin-top: -20px;
+margin-bottom: 100px;}

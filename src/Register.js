@@ -172,8 +172,8 @@ const Register = ({ className, onSignInClick }) => {
                     <p>
                         <center>Already registered?</center><br />
                         <span className="line">
-                            <center><a href="#" onClick={(e) => { e.preventDefault(); onSignInClick(); }}>
-                            Sign In</a></center>
+                            <a href="#" onClick={(e) => { e.preventDefault(); onSignInClick(); }}>
+                            <center>Sign In</center></a>
                         </span>
                     </p>
                 </section>
