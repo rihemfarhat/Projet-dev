@@ -1,141 +1,95 @@
-/* Overall Job List Styling */
-.job-page-container {
-    padding: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-    color: #212E53; /* Deep blue for text */
-    font-family: 'Roboto', sans-serif;
+.jobs-container {
+  margin-bottom: 100px;
+  margin-left: 350px;
+  max-width: 800px;
+  text-align: center;
+
 }
 
-/* Job Page Title */
-.job-page-title {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    text-align: center;
-    font-family: 'Playfair Display', serif;
-    color: #212E53; /* Deep blue for the title */
+.jobs-title {
+  font-size: 30px;
+  margin-bottom: 20px;
+  margin-top: 50px;
+  color: rgb(4, 4, 83);
 }
 
-/* Introductory Paragraph */
-.job-intro {
-    font-size: 1.2rem;
-    text-align: center;
-    margin-bottom: 30px;
-    line-height: 1.6;
-    color: #4A919E; /* Medium blue-green for paragraph text */
+.search-bar {
+  width: 90%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
 }
 
-/* Grid Layout for Jobs */
 .job-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
-    gap: 20px;
-    margin: 40px 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
-/* Individual Job Cards */
 .job-card {
-    background: linear-gradient(145deg, #5FC2BA, #4A919E); /* Blue-green gradient */
-    border-radius: 12px;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background: #fff;
 }
 
-.job-card:hover {
-    transform: translateY(-7px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+.job-logo img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  margin-right: 20px;
 }
 
-/* Job Title */
-.job-card h2 {
-    font-size: 1.8rem;
-    margin: 0;
-    color: #212E53; /* Deep blue for title */
-    font-weight: bold;
-    font-family: 'Playfair Display', serif;
+.job-content {
+  flex-grow: 1;
+  text-align: left;
 }
 
-/* Company Name */
-.job-card .company {
-    font-size: 1.2rem;
-    color: #BED3C3; /* Light greenish color for the company name */
-    margin-top: 8px;
+.job-content h2 {
+  font-size: 20px;
+  margin: 0;
 }
 
-/* Job Location */
-.job-card .location {
-    font-size: 1rem;
-    color: #F5F5F5; /* White text for visibility */
-    margin-top: 10px;
+.job-content .company,
+.job-content .location {
+  font-size: 14px;
+  color: #555;
 }
 
-/* Job Description */
-.job-card .description {
-    font-size: 1rem;
-    margin-top: 10px;
-    color: #F5F5F5;
-    line-height: 1.5;
+.job-content .description {
+  margin-top: 10px;
+  font-size: 16px;
 }
 
-/* Apply Button */
+.load-more-button {
+  padding: 10px 20px;
+  background: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.load-more-button:hover {
+  background: #0056b3;
+}
+
 .apply-button {
-    background-color: #212E53; /* Deep blue button background */
-    color: #F5F5F5; /* White text */
-    padding: 12px 24px;
-    font-size: 1.1rem;
-    border: 2px solid #4A919E; /* Accent border */
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 15px;
-    font-family: 'Poppins', sans-serif;
-    font-weight: bold;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+  margin-top: 10px;
+  padding: 10px 15px;
+  background: #080f73;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.3s;
 }
 
 .apply-button:hover {
-    background-color: #4A919E; /* Lighter hover effect */
-    color: #212E53; /* Text switches to deep blue */
-    transform: scale(1.05);
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .job-list {
-        margin: 20px;
-        grid-template-columns: 1fr; /* Single column layout for smaller screens */
-    }
-
-    .job-card {
-        padding: 15px;
-    }
-
-    .apply-button {
-        font-size: 1rem;
-        padding: 10px 20px;
-    }
-}
-
-
-/* Show More Button Styling */
-.show-more-button {
-    background: none; /* No background color */
-    color: #5FC2BA; /* Blue-green color */
-    font-size: 1.2rem;
-    text-decoration: underline; /* Underline the text */
-    font-family: 'Poppins', sans-serif;
-    cursor: pointer;
-    border: none; /* No border */
-    margin-top: 20px;
-    display: block;
-    text-align: center;
-    transition: color 0.3s ease;
-}
-
-.show-more-button:hover {
-    color: #212E53; /* Darker blue on hover */
-    text-decoration: none; /* Remove underline on hover */
+  background: #4872ae;
 }

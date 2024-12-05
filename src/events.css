@@ -1,6 +1,6 @@
 .event-page-container {
     padding: 20px;
-    font-family: Arial, sans-serif;
+    
     max-width: 75%; /* Limite la largeur de la page */
     margin: 0 auto; /* Centre la page horizontalement */
   }
@@ -8,7 +8,7 @@
   .event-page-title {
     text-align: center;
     margin-top: 50px;
-    font-size: 3rem;
+    font-size: 30px;
     margin-bottom: 30px;
     color: rgb(4, 4, 83);
   }
@@ -36,6 +36,8 @@
     flex-direction: column; /* Alignement vertical des éléments */
     justify-content: space-between; /* Distribue l'espace pour positionner le bouton en bas */
     height: 100%; /* Permet à toutes les cartes d’avoir la même hauteur */
+    margin-top: 15px;
+   
   }
   
   .event-card:hover {
@@ -65,7 +67,7 @@
     display: block;
     margin: 10px auto;
     padding: 10px 20px;
-    background-color: #031b34;
+    background-color: #052b53;
     color: #fff;
     border: none;
     border-radius: 4px;
@@ -89,5 +91,38 @@
   
   .toggle-button:hover {
     background-color: #1e337e;
+  }
+  
+
+  .search-bar {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 50px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  
+  .search-bar:focus {
+    outline: none;
+    border-color: #007bff;
+  }
+  
+  .toggle-button {
+    margin-bottom: 100px;
+    margin-top: 50px;
+    padding: 10px 20px;
+    font-size: 14px;
+    background-color: #052b53;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .toggle-button:hover {
+    background-color: #0056b3;
   }
   

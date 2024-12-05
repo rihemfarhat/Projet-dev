@@ -1,10 +1,10 @@
 /* Page CV Submission */
 .cv-submission {
-    margin-bottom: 200px;
-    margin-left: 350px;
+    margin-bottom: 250px;
+    margin-left:520px;
     margin-top: 100px;
     background: linear-gradient(to right, #4A919E, #212E53); /* Harmonious gradient */
-    padding: 50px 40px; /* Increase padding for better spacing */
+    padding: 30px 40px; /* Increase padding for better spacing */
     border-radius: 20px; /* Slightly larger border radius for a smoother look */
     box-shadow: 0 8px 18px rgba(124, 121, 221, 0.15); /* Softer and larger shadow for depth */
     max-width: 450px; /* Slightly wider for better form fit */

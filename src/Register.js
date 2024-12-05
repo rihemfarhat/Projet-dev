@@ -170,7 +170,7 @@ const Register = ({ className, onSignInClick }) => {
                         <button disabled={!validName || !validEmail || !validPwd || !validMatch ? true : false}>Sign Up</button>
                     </form>
                     <p>
-                        Already registered?<br />
+                        <center>Already registered?</center><br />
                         <span className="line">
                             <center><a href="#" onClick={(e) => { e.preventDefault(); onSignInClick(); }}>
                             Sign In</a></center>

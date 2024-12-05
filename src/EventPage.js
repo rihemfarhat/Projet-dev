@@ -5,6 +5,7 @@ const EventPage = () => {
   const [events, setEvents] = useState([]);
   const [visibleEvents, setVisibleEvents] = useState(3); // Nombre d'événements affichés initialement
   const [showMore, setShowMore] = useState(false); // État pour basculer entre "Voir plus" et "Voir moins"
+  const [searchTerm, setSearchTerm] = useState(""); // Terme de recherche
 
   // Chargement des données des événements
   useEffect(() => {
@@ -78,10 +79,17 @@ const EventPage = () => {
     setEvents(mockEvents);
   }, []);
 
+  // Fonction pour filtrer les événements en fonction du terme de recherche
+  const filteredEvents = events.filter((event) =>
+    event.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    event.date.includes(searchTerm) ||
+    event.location.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   // Fonction pour basculer entre les événements visibles
   const toggleEvents = () => {
     setShowMore(!showMore);
-    setVisibleEvents(showMore ? 3 : events.length);
+    setVisibleEvents(showMore ? 3 : filteredEvents.length);
   };
 
   return (
@@ -96,9 +104,18 @@ const EventPage = () => {
         </p>
       </header>
 
+      {/* Barre de recherche */}
+      <input
+        type="text"
+        className="search-bar"
+        placeholder="Search by title, date, or location..."
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+      />
+
       {/* Cartes des événements */}
       <div className="event-grid">
-        {events.slice(0, visibleEvents).map((event) => (
+        {filteredEvents.slice(0, visibleEvents).map((event) => (
           <div key={event.id} className="event-card">
             <img
               src={event.image}
@@ -126,7 +143,7 @@ const EventPage = () => {
       </div>
 
       {/* Bouton pour basculer */}
-      {events.length > 3 && (
+      {filteredEvents.length > 3 && (
         <button onClick={toggleEvents} className="toggle-button">
           {showMore ? "Show Less" : "Show More"}
         </button>
