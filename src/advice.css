@@ -1,6 +1,5 @@
 /* Style global */
 .Advice {
-  font-family: Arial, sans-serif;
   padding: 20px;
   line-height: 1.6;
   color: #333;
@@ -8,7 +7,8 @@
 
 .advice-header {
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 100px;
+  margin-top: 50px;
 }
 
 .advice-header h1 {
@@ -98,11 +98,13 @@
 /* Footer */
 .advice-footer {
   text-align: center;
-  margin-top: 20px;
+  margin-top: 100px;
+  margin-bottom:100px;
 }
 
 .advice-footer h3 {
   color: #212E53;
+  font-size: 30px;
 }
 
 .advice-footer p {
