@@ -1,65 +1,148 @@
-/* Register.css */
-.register-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f4f7f6;
-  }
-  
-  .register-card {
-    background-color: white;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 350px;
-    text-align: center;
-  }
-  
-  .register-card h2 {
-    font-size: 24px;
-    margin-bottom: 20px;
-  }
-  
-  .input-group {
-    margin-bottom: 20px;
-    text-align: left;
-  }
-  
-  .input-group label {
-    font-weight: bold;
-    font-size: 14px;
-  }
-  
+/* Section principale */
+.reg {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  padding: 20px;
+  box-sizing: border-box;
+  overflow: hidden;
+  position: relative;
+}
 
-  
-  .register-button {
-    width: 100%;
-    padding: 10px;
-    background-color: #0077b5;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
+.reg::before {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.15), transparent 70%);
+  animation: float 6s infinite;
+  z-index: 1;
+}
+
+@keyframes float {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
   }
-  
-  .register-button:hover {
-    background-color: #005c8b;
+  50% {
+    transform: translate(-45%, -45%) rotate(180deg);
   }
-  
-  .error-message {
-    color: red;
-    font-size: 14px;
-    margin-bottom: 15px;
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
   }
-  
-  .login-link {
-    font-size: 14px;
-  }
-  
-  .login-link a {
-    color: #0077b5;
-    text-decoration: none;
-  }
-  
+}
+
+.reg h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  text-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Formulaire */
+form {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 15px;
+  padding: 40px;
+  width: 100%;
+  max-width: 450px;
+  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 2;
+}
+
+label {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  font-size: 1rem;
+  box-shadow: inset 0px 3px 5px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: #6a11cb;
+  box-shadow: 0px 0px 5px rgba(106, 17, 203, 0.5);
+}
+
+textarea {
+  resize: none;
+  height: 100px;
+}
+
+button {
+  background: linear-gradient(90deg, #6a11cb, #2575fc);
+  color: white;
+  padding: 12px 15px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0px 5px 15px rgba(106, 17, 203, 0.3);
+}
+
+/* Messages */
+.error,
+.success {
+  font-size: 0.9rem;
+  padding: 10px;
+  margin-bottom: 15px;
+  text-align: center;
+  border-radius: 5px;
+  font-weight: 600;
+}
+
+.error {
+  background: rgba(255, 0, 0, 0.1);
+  color: red;
+}
+
+.success {
+  background: rgba(0, 255, 0, 0.1);
+  color: green;
+}
+
+/* Footer et lien */
+form p {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  text-align: center;
+  color: #555;
+}
+
+form p a {
+  color: #2575fc;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+form p a:hover {
+  text-decoration: underline;
+}

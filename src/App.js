@@ -13,15 +13,38 @@ import Advice from "./Advice";
 import logo from './Capture_d_écran_2024-11-09_210108-removebg-preview.png';
 
 function App() {
-    const [currentPage, setCurrentPage] = useState("home");
+    const [currentPage, setCurrentPage] = useState(""); // État pour la page active
+    const [isAuthenticated, setIsAuthenticated] = useState(false); // État pour l'authentification
 
-    // Function to render the correct page based on the currentPage state
+    const handleLoginSuccess = () => {
+        setIsAuthenticated(true);
+        setCurrentPage("home"); // Redirige vers la page d'accueil après connexion
+    };
+
     const renderPage = () => {
+        if (!isAuthenticated) {
+            // Rendu des pages Login et Register avant authentification
+            if (currentPage === "login") {
+                return <Login onLoginSuccess={handleLoginSuccess} />;
+            } 
+            if (currentPage === "register") {
+                return <Register onSignInClick={() => setCurrentPage("login")} />;
+            }
+            // Page par défaut avec les boutons si aucune page spécifique n'est choisie
+            return (
+                <div className="login-register-background">
+                    <NetworkBackground />
+                    <TextGradient />
+                    <div className="top-right-buttons">
+                        <button className="styled-button" onClick={() => setCurrentPage("login")}>Login</button>
+                        <button className="styled-button" onClick={() => setCurrentPage("register")}>Sign Up</button>
+                    </div>
+                </div>
+            );
+        }
+
+        // Rendu des fonctionnalités après connexion
         switch (currentPage) {
-            case "register":
-                return <Register className="register" onSignInClick={() => setCurrentPage("login")} />;
-            case "login":
-                return <Login />;
             case "careers":
                 return <Jobs />;
             case "aboutus":
@@ -42,9 +65,9 @@ function App() {
     };
 
     return (
-        <>
-            {/* Afficher la Navbar et Footer seulement si on n'est pas sur la page login ou register */}
-            {currentPage !== "login" && currentPage !== "register" && (
+        <div className="App">
+            {/* Barre de navigation après connexion */}
+            {isAuthenticated && (
                 <div className="barre">
                     <img className="petitlogo" src={logo} alt="Logo" />
                     <Navbarr
@@ -58,17 +81,15 @@ function App() {
                     />
                 </div>
             )}
-
-            {/* Contenu de la page */}
+            {/* Rendu principal */}
             {renderPage()}
-
-            {/* Afficher le Footer seulement si on n'est pas sur la page login ou register */}
-            {currentPage !== "login" && currentPage !== "register" && (
+            {/* Footer après connexion */}
+            {isAuthenticated && (
                 <footer>
                     <ContactUs className3="imgg" className1="info" className2="nav" />
                 </footer>
             )}
-        </>
+        </div>
     );
 }
 

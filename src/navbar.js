@@ -1,25 +1,34 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom"; 
-import './navbar.css'
+import { Link } from "react-router-dom";
+import './navbar.css';
 
-function Navbarr({ className, setShowRegister, setShowCareers, setShowAdvice, setShowAboutUs, resetHomePage, setShowEventPage }) {
-    const list = ["Home", "About Us", "Events", "Careers", "Career Advice", "Register"];
+function Navbarr({ 
+  className, 
+  setShowRegister, 
+  setShowCareers, 
+  setShowAdvice, 
+  setShowAboutUs, 
+  resetHomePage, 
+  setShowEventPage, 
+  loggedIn  
+}) {
+    const list = ["Home", "About Us", "Events", "Careers", "Career Advice"];
     const [showVerticalMenu, setShowVerticalMenu] = useState(false);
 
     const renderMenuItem = (item) => {
         switch (item) {
             case "Home":
-                return <button onClick={resetHomePage}>{item}</button>; // Home button to reset
-            case "Register":
-                return <button onClick={() => setShowRegister()}>Register</button>;
+                return <button onClick={resetHomePage}>{item}</button> ;
+            // case "Register":
+            //     return <button onClick={() => setShowRegister()}>Register</button>;
             case "Careers":
-                return <button onClick={() => setShowCareers()}>Careers</button>;
+                return  <button onClick={() => setShowCareers()}>Careers</button> ;
             case "Career Advice":
-                return <button onClick={() => setShowAdvice()}>Career Advice</button>;
+                return  <button onClick={() => setShowAdvice()}>Career Advice</button> ;
             case "Events":
-                return <button onClick={() => setShowEventPage()}>Events</button>;
+                return  <button onClick={() => setShowEventPage()}>Events</button> ;
             case "About Us":
-                return <button onClick={() => setShowAboutUs()}>About Us</button>;
+                return  <button onClick={() => setShowAboutUs()}>About Us</button>;
             default:
                 return <Link to={`/${item.replace(/\s+/g, '').toLowerCase()}`}>{item}</Link>;
         }
@@ -28,23 +37,21 @@ function Navbarr({ className, setShowRegister, setShowCareers, setShowAdvice, se
     return (
         <div
             className={className}
-            onMouseLeave={() => setShowVerticalMenu(false)} // Masquer le menu lorsque la souris sort
+            onMouseLeave={() => setShowVerticalMenu(false)} 
         >
-            {/* Conteneur principal du menu */}
             <div className="menu-container">
-                {/* Icône du menu ☰ */}
-                <div
+                {/* <div
                     className="menu-icon"
-                    onMouseEnter={() => setShowVerticalMenu(true)} // Afficher le menu au survol
+                    onMouseEnter={() => setShowVerticalMenu(true)} // Show menu on hover
                 >
                     ☰
-                </div>
+                </div> */}
 
-                {/* Menu vertical */}
+                {/* Vertical menu */}
                 <div
                     className={`vertical-menu ${showVerticalMenu ? "show" : ""}`}
-                    onMouseEnter={() => setShowVerticalMenu(true)} // Maintenir le menu visible au survol
-                    onMouseLeave={() => setShowVerticalMenu(false)} // Masquer le menu lorsque la souris sort
+                    onMouseEnter={() => setShowVerticalMenu(true)} // Keep menu visible while hovered
+                    onMouseLeave={() => setShowVerticalMenu(false)} // Hide menu on mouse leave
                 >
                     {list.map((item) => (
                         <div key={`vertical-${item}`} className="vertical-item">
@@ -54,7 +61,7 @@ function Navbarr({ className, setShowRegister, setShowCareers, setShowAdvice, se
                 </div>
             </div>
 
-            {/* Navigation horizontale */}
+            {/* Horizontal navigation */}
             <table>
                 <tbody>
                     <tr>
